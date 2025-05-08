@@ -1,0 +1,184 @@
+In this lecture we covered linear symplectic geometry and the cotangent bundle as the first example of a symplectic manifold.
+References for this lecture are sections 2.1-2.3 and 3.1 of Mc-Duff and Salamon's \emph{Introduction to Symplectic Topology}.
+
+\begin{dfn}
+    A \emph{symplectic manifold} is a pair $(M,\omega)$ of an even-dimensional smooth manifold without boundary $M$, and a closed non-degenerate $2$-form $\omega$ on $M$. 
+\end{dfn}
+
+An equivalent condition to closedness and non-degeneracy would be that the highest wedge power of $\omega$ is a volume form.
+So in particular it follows that $M$ is orientable.
+
+\subsubsection*{Linear symplectic geometry}
+We now turn our attention to the simpler linear setting of symplectic geometry.
+
+\begin{dfn}
+    A symplectic vector space is a pair $(V,\omega)$ of a finite-dimensional vector space $V$ over $\bR$, and a non-degenerate skew-symmetric bilinear form $\omega$ on $V$.
+\end{dfn}
+
+\begin{prop}
+    $V$ is even-dimensional.
+\end{prop}
+
+\begin{proof}
+    This follows immediately from the existence of a non-degenerate skew-symmetric bilinear form.
+\end{proof}
+
+\begin{example}
+    Let $V=\bR^{2n}$ and $\omega_0$ be given by
+    \[\omega_0(v,w)=v^\intercal\begin{bmatrix}
+        0&\operatorname{Id}_{\bR^n}\\-\operatorname{Id}_{\bR^n}&0
+    \end{bmatrix}w.\]
+    This shall be the canonical symplectic form on Euclidean space, and we call the specified matrix $-J_0$.
+    If we denote by $x_1,\ldots,x_n,y_1,\ldots,y_n$ the standard basis on $\bR^{2n}$, then we have
+    \[\omega_0(x_i,x_j)=\omega(y_i,y_j)=0\]
+    for all $i,j$ and
+    \[\omega(x_i,y_j)=\delta_{ij}.\]
+\end{example}
+
+\begin{dfn}
+    A \emph{linear symplectomorphism} is a linear isomorphism $\psi:(V,\omega)\to(V',\omega')$ such that $\psi^*\omega'=\omega$.
+    Explicitly this means that
+    \[\omega(v,w)=\omega'(\psi v,\psi w).\]
+\end{dfn}
+
+\begin{remark}
+    We may also consider "symplectic linear maps" in general, but because the symplectic form is non-degenerate the pull-back condition requires these to be injective.
+    Thus a symplectic linear map is just a symplectomorphism onto its image.
+\end{remark}
+
+A linear symplectomorphism of $(\bR^{2n},\omega_0)$ is then represented by a matrix $A\in\operatorname{GL}_{2n}(\bR)$ such that $A^\intercal(J_0)A=J_0$.
+
+\begin{dfn}
+    A matrix $A\in\operatorname{GL}_{2n}(\bR)$ satisfying this equation is called symplectic.
+    Denote the group of symplectic matrices by $\operatorname{Sp}(2n)$ or $\operatorname{Sp}(2n,\bR)$.
+    \todo{compute this}
+    A computation shows that $\det A=\pm1$ for symplectic $A$.
+    In fact, the Pfaffian may be used to show that $\det A=1$.
+\end{dfn}
+
+Let $(V,\omega)$ be a symplectic vector space and $W\subset V$ a linear subspace.
+
+\begin{dfn}
+    The \emph{symplectic complement} of $W$ is
+    \[W^\omega=\{v\in V\mid\omega(v,w)=0\text{ for all }w\in W\}.\]
+    We then say that $W\subset V$ is
+    \begin{itemize}
+        \item \emph{isotropic} if $W\subset W^\omega$,
+        \item \emph{coisotropic} if $W^\omega\subset W$,
+        \item \emph{symplectic} if $W\cap W^\omega=\varnothing$, and
+        \item \emph{Lagrangian} if $W=W^\omega$.
+    \end{itemize}
+    If $W$ is symplectic, then $(W,\omega|_W)$ is a symplectic vector space.
+\end{dfn}
+
+\begin{lem}
+    We have the following two results,
+    \[\dim W+\dim W^\omega=\dim V,\quad\text{and}\quad (W^\omega)^\omega=W.\]
+\end{lem}
+
+\begin{proof}
+    Consider the map
+    \[i_\omega:V\to V^*,\quad i_\omega(v)(w)=\omega(v,w).\]
+    Then this is an isomorphism, as $\omega$ is non-degenerate.
+    Now see that
+    \[i_\omega(W^\omega)=\{\phi\in V^*|\phi(w)=0\text{ for all }w\in W\}=W^\perp.\]
+    Because $i_\omega$ is an isomorphism, this means that
+    \[\dim W+\dim W^\omega=\dim W+\dim W^\perp=\dim V.\]
+    See that by definition $W\subset(W^\omega)^\omega$ and as they have the same dimension they must then be equal.
+\end{proof}
+
+\begin{cor}
+The following $3$ results follow immediately,
+\begin{itemize}
+    \item $W$ is symplectic $\iff$ $W^\omega$ is symplectic,
+    \item $W$ is isotropic $\iff$ $W^\omega$ is coisotropic, and
+    \item $W$ is Lagrangian $\implies\dim W=\frac12\dim V$.
+\end{itemize}
+\end{cor}
+
+\begin{thm}
+    Any symplectic vector space $(V,\omega)$ of dimension $2n$ is isomorphic $(\bR^{2n},\omega_0)$.
+\end{thm}
+
+\begin{proof}
+    \todo{prove this}
+    It suffices to construct a \emph{symplectic basis}, i.e. a basis $u_1,\ldots,u_n,v_1,\ldots,v_n\in V$ such that
+    \[\omega(u_i,u_j)=\omega(v_i,v_j)=0,\]
+    for all $i,j$ and
+    \[\omega(u_i,v_j)=\delta_{ij}.\]
+    To construct such a basis first choose any non-zero $u_1\in V$, and because $\omega$ is non-degenerate, we can find some $v_1\in V$ such that $\omega(u_1,v_1)=1$.
+    See that $u_1,v_1$ span a symplectic subspace.
+    Repeating this process on the symplectic complement of their span then gets us a symplectic basis.
+\end{proof}
+
+\subsubsection*{Symplectic manifolds}
+\begin{dfn}
+    A symplectomorphism $(M,\omega_M)\to(N,\omega_N)$ is a diffeomorphism $\phi$ such that $\phi^*\omega_N=\omega_M$.
+    We denote the symplectomorphisms of $(M,\omega_M)$ by $\operatorname{Symp}(M,\omega_M)$.
+    This is a lie group.
+    We say that a vector field $X\in\mf X(M)$ is symplectic if $i_X\omega$ is closed.
+    We denote these  by $\chi(M,\omega)$.
+\end{dfn}
+
+\begin{remark}
+    By $i_X$ we denote the interior derivative or contraction, i.e. for a $k$-form $\mu$,
+    \[i_X\mu(X_1,\ldots,X_{k-1})=\mu(X,X_1,\ldots,X_{k-1}).\]
+    Sometimes this is also denoted by $X\lrcorner \mu$.
+\end{remark}
+
+\begin{prop}
+    Integrating symplectic vector fields results in a symplectomorphism.
+    Specifically if we have a smooth families $(\phi_t)$ of smooth maps and $(X_t)$ of smooth vector fields such that
+    \[\phi_0=\id\quad\text{and}\quad\frac{\dee}{\dee t}\phi_t=X_t\circ\phi_t.\]
+    Then $\phi_t$ is symplectic for all $t$ if and only if $X_t$ is symplectic for all $t$.
+\end{prop}
+
+\begin{proof}
+    \todo{prove this}
+\end{proof}
+
+\subsubsection*{A bit on the cotangent bundle}
+We consider the cotangent bundle $T^*L$ of a closed manifold $L$.
+\begin{dfn}[Canonical $1$-form]
+    We denote by $\pi:T^*L\to L$ the projection of the fibers to the base space.
+    Then we can take the pullback along the projection as follows.
+    For $p\in L,\xi\in T^*_p(L)$ and a tangent vector $v\in T_{(p,\xi)}T^*L$, denote
+    \[\lambda_{\mathrm{can}}(p,\xi)(v):=(\xi\circ\dee_p\pi)(v).\]
+    We call $\lambda_{\mathrm{can}}\in\Omega^1(T^*L)$ the \emph{canonical $1$-form}.
+\end{dfn}
+
+\begin{prop}
+    Let $L$ be a smooth manifold, and define $\omega_{\mathrm{can}}:=-\dee\lambda_{\mathrm{can}}\in\Omega^2(T^*L)$ the canonical symplectic form.
+    Then $(T^*L,\omega_{\mathrm{can}})$ is a symplectic manifold.
+\end{prop}
+
+\begin{proof}
+    It is clear that $\omega_{\mathrm{can}}$ is closed because it is exact.
+    Verifying that $\omega_{\mathrm{can}}$ is non-degenerate is left to the reader.
+\end{proof}
+
+\begin{remark}
+    Let $x:U\to\bR^n$ be a chart of $L$ with coordinates $x_1,\ldots,x_n$.
+    At a point $p\in L$ see that the differentials $(\dee x_i)_{i=1}^n$ form a basis of the cotangent space $T_q^*L$ and denoting $y_i=\dee x_i$ we get local coordinates $(x_1,\ldots,x_n,y_1,\ldots,y_n)$ for $T^*U$.
+    Then one can define the canonical $1$-form in local coordinates to be
+    \[\lambda_{\mathrm{can}}=y\dee x.\]
+    Then $\omega_{\mathrm{can}}=\dee x\wedge\dee y$ in local coordinates.
+\end{remark}
+
+\begin{prop}
+    Let $\sigma\in\Omega^1(L)$ be a $1$-form.
+    Consider it as a map $\sigma:L\to T^*L$.
+    Then $\lambda_{\mathrm{can}}$ is described by the universal property that the pullback satisfyies
+    \[\sigma^*\lambda_{\mathrm{can}}=\sigma,\]
+    for any $\sigma$.
+\end{prop}
+
+\begin{proof}
+    This is done in local coordinates on some chart $x:U\to\bR^n$.
+    We write
+    \[\sigma=\sum_{i=1}^n\sigma_i(x_1,\ldots,x_n)\dee x_i.\]
+    Then this is a map $(x_1,\ldots,x_n)\mapsto(x_1,\ldots,x_n,\sigma_1,\ldots,\sigma_n)$.
+    Thus
+    \[\sigma^*\lambda_{\mathrm{can}}=\sigma^*\left(\sum_{i=1}^ny_i\dee x_i\right)=\sum_{i=1}^n\sigma_i(x_1,\ldots,x_n)\dee x_i=\sigma.\]
+    To verify that this uniquely determines $\lambda$ is suffices to note that if $\sigma^*\mu=0$ for all $\sigma$, then $\mu=0$.
+\end{proof}

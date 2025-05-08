@@ -1,0 +1,50 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{danielmacros}[2023-08-01 My most used macros]
+%Liable to constant expansion depending on what kind of math I'm working with
+
+%Basic shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mf#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\mc#1{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+
+
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\syt}{syt}
+\DeclareMathOperator{\pym}{pym}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Coh}{Coh}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\id}{id}
+
+\renewcommand{\phi}{\varphi}
+
+%Macros
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\angles}[1]{\left\langle#1\right\rangle}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+\newcommand{\dee}{\,\mathrm d}
+
+\newcounter{lecture}
+
+\newcommand{\newlecture}[1]{%
+\medskip%
+\refstepcounter{lecture}%
+\addcontentsline{toc}{subsection}{Lecture \thelecture\ #1}%
+\begin{center}%
+    \textsc{Lecture \thelecture\ #1}%
+\end{center}%
+}

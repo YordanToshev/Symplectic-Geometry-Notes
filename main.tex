@@ -1,0 +1,83 @@
+\documentclass{article} % Document class
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % Most useful ams packages
+\usepackage{danielenv,danielmacros} % My packages
+\usepackage{hyperref} % Hyperlinks
+\usepackage{enumitem} % Nicer numbered lists
+\usepackage{tikz-cd,quiver} % Commutative diagrams
+\usepackage{todonotes} % TODO notes
+\usepackage[scr=boondox]{mathalfa}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\addbibresource{bibliography.bib}
+%\usepackage{parskip}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=cyan,
+} % Link colors
+
+\title{\textsc{Introduction to Symplectic Geometry\\ Notes from Summer Semester 2025}}
+\author{Daniel Arone}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+These notes are on the course V5D6 - Introduction to Symplectic Geometry\footnote{\href{https://www.math.uni-bonn.de/~lcote/V5D6_2025.html}{https://www.math.uni-bonn.de/\textasciitilde lcote/V5D6\_2025.html}}, lectured jointly by Nathaniel Bottman and  Laurent Côté.
+They are entirely my own, as are any potential mistakes in what follows.
+Proceed with caution.
+
+This course covers the basic topics in symplectic geometry.
+We will not discuss Floer theory or $J$-holomorphic curves.
+The main reference for this course is \cite{intro} by McDuff and Salamon.
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction to symplectic topology}
+\newlecture{(10.04.25).}
+\input{lecture1.tex}
+
+\newlecture{(17.04.25).}
+\input{lecture2.tex}
+
+\section{Dynamics and integrable systems}
+\newlecture{(24.04.25).}
+\input{lecture3.tex}
+
+\newlecture{}
+\input{lecture4.tex}
+
+\section{Lagrangian submanifolds and toric symplectic manifolds}
+\newlecture{}
+\input{lecture5.tex}
+
+\newlecture{}
+\input{lecture6.tex}
+
+\section{Symplectic capacities and embeddings}
+\newlecture{}
+\input{lecture7.tex}
+
+\newlecture{}
+\input{lecture8.tex}
+
+\newlecture{}
+\input{lecture9.tex}
+
+\newlecture{}
+\input{lecture10.tex}
+
+\section{Hamiltonian dynamics}
+\newlecture{}
+\input{lecture11.tex}
+
+\printbibliography
+
+\end{document}

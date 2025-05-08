@@ -1,0 +1,58 @@
+In this lecture we covered Hamiltonian mechanics and vector fields, as well as the Poisson bracket.
+The goal of this lecture was to introduce some the historical and physical motivation for symplectic geometry.
+In the notes for this lecture we omit some of the physical calculations for brevity as they will not be relevant going further.
+We attempt to retain the physical and historical motivation behind symplectic geometry.
+
+References for this lecture are sections 1.1 and 3.1 of \cite{intro}.
+\emph{(Note: From this point onward the references are specifically for the third edition of the book, I am unsure which edition the previous ones refer to.)}
+
+\subsubsection*{Hamiltonian mechanics}
+Consider a physical system, the configurations of which may be described by a point $x\in\bR^n$.
+For example, the positions of three celestial objects may be described by a point in $\bR^9$.
+We are interested in trajectories in this space, denoted by $t\mapsto x(t)$.
+Now suppose that we have a function
+\[L:\bR\times\bR^n\times\bR^n\to\bR,\quad L=L(t,x,v)\]
+such that trajectories are the critical points of the "action functional":
+\[I(x):=\int_{t_0}^{t_1}L(t,x(t),\dot x(t))\dee t.\]
+In fact, such a function models the difference between the kinetic and potential energies of the system.
+\emph{(Note: In the tradition of the physicists we will abuse notation and denote $L(t,x(t),v(t))$ by $L(t,x,v)$.)}
+
+\begin{lem}[]
+    A minimal path $x:[t_0,t_1]\to\bR^n$ satisfies the Euler-Lagrange equations:
+    \[\frac{\dee}{\dee t}\frac{\partial L}{\partial v}=\frac{\partial L}{\partial x},\]
+    where by $\partial L/\partial v$ we refer to $(\partial L/\partial v_1,\ldots,\partial L/\partial v_n)$, and similarly for $x$.
+\end{lem}
+
+\begin{proof}
+    See Lemma 1.1.1 in \cite{intro}.
+\end{proof}
+
+This is the Lagrangian formulation of mechanics.
+To transform this into the Hamiltonian formulation of mechanics we apply the Legendre transformation to our coordinates.
+We replace $v_i$ by $y_i$ where
+\[y_i=\frac{\partial L}{\partial v_i}(x,v).\]
+This is a valid coordinate transformation as long as the Legendre condition,
+\[\det\left(\frac{\partial^2L}{\partial v_i\partial v_j}\right)_{ij}\neq0,\]
+                      holds.
+For clarity of notation we denote $G_i(t,x,y)=v_i$, and avoid reference to $v$ so that we may take $y$ as a given.
+
+\begin{dfn}[Hamiltonian]
+    We define the Hamiltonian to be
+    \[H(t,x,y)=\sum_{i=1}^n y_i\cdot G_i(t,x,y)-L(t,x,G(t,x,y)).\]
+    This represents the total energy within the system.
+\end{dfn}
+
+We omit the computation but one may see that
+\[\frac{\partial H}{\partial x_i}=-\dot y_i\quad\text{and}\quad\frac{\partial H}{\partial y_i}=\dot x_i.\]
+These are called Hamilton's equations.
+Note that while the Lagrangian formalism is concerned with vectors in space and the tangent bundle, in Hamilton's reformulation we focus on the cotangent bundle.
+
+Write $z(t)=(x(t),y(t))$.
+Then we may rewrite Hamilton's equations as
+\[\dot z=-J_0\nabla H(z),\quad J_0=\begin{bmatrix}
+    0&-\id_n\\ \id_n&0
+\end{bmatrix}.\]
+
+\subsubsection*{The Poisson bracket}
+In what follows we assume that $H$ is independent of $t$, so $H(t,x(t),y(t))=H(x(t),y(t))$.
+\todo{finish this lecture}

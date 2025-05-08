@@ -1,0 +1,37 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{danielenv}[Environments for e.g. theorems and proofs]
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{RemarkBorder}{RGB}{0,0,0}
+\definecolor{RemarkBg}{RGB}{210,230,255}
+
+%Regular remark
+\newenvironment{remark}
+{
+\begin{center}
+\begin{tikzpicture}
+\node[fill=RemarkBg, rectangle, inner sep=10pt, text width=\textwidth-0.1cm-20.4pt,draw=RemarkBg, sharp corners] (box) \bgroup
+\textbf{Remark.}%
+}
+{
+\egroup;
+\fill[RemarkBorder, sharp corners] (box.south west) rectangle ([xshift=-0.1cm] box.north west);
+\end{tikzpicture}
+\end{center}
+}
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+
+\newtheorem*{thm*}{Theorem}
+
+\newtheorem*{dfn}{Definition}
+
+\newtheorem{lem}[thm]{Lemma}
+
+\newtheorem{prop}[thm]{Proposition}
+
+\newtheorem*{example}{Example}
+
+\newtheorem*{cor}{Corollary}
