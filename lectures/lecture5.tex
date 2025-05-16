@@ -1,0 +1,66 @@
+No reference have been given for this lecture.
+In this lecture we covered toric symplectic manifolds.
+
+\begin{dfn}[Symplectic toric manifold]
+    We say $M=(M^{2n},\omega)$ is \emph{toric} if it admits an integrable system such that the $\bR^n$ action factors through $\bR^n/\bZ^n$.
+\end{dfn}
+
+So there exists a map $\mbb H(=(H_1,\ldots,H_n)):M\to\bR^n$ which reduces to $\bR^n/\bZ^n$.
+
+\begin{example}
+    Let $M=\bC^n\cong\bR^{2n}$ and $\mbb T^n$ act on $\bC^n$ by rotation.
+    So
+    \[(e^{i\theta_1},\ldots,e^{i\theta_n})(z_1,\ldots,z_n)\mapsto(e^{i\theta_1}z_1,\ldots,e^{i\theta_n}z_n).\]
+    Then this action is induced by the moment map
+    \[\mu=\mbb H=(H_1,\ldots,H_n),\quad H_i(x_1,\ldots,x_n,y_1,\ldots,y_n)=\frac12(x_i^2+y_i^2).\]
+    The image of $\mu$ is just $(\bR_{\ge0})^n$ and the preimage of a point in the open locus is just $\mbb T^n$.
+\end{example}
+
+We now move our definitions to abstract torii.
+
+\begin{dfn}[Updated symplectic toric manifold]
+    A ($k$-)torus is a $k$-dimensional connected compact Lie group.
+    Such a group is non-canonically isomorphic to $(S^1)^k$.
+
+    Let $(M^{2n},\omega)$ be a symplectic manifold, and $T$ be a $k$-torus for some $1\le k\le n$.
+    Then an action $T\acts M$ is \emph{Hamiltonian} if there exists a moment map $\mu:M\to\mf t^\vee$ inducing $T\acts M$.
+    Here $\mf t^\vee$ denotes the dual of the Lie algebra $T$.
+    Then $M$ is toric.
+    
+    Given a Hamiltonian action $\Psi:T\times M\to M$ and $v\in\mf t$, we define the vector field $v^\#\in\mc X(M)$ to be
+    \[v_p^\#=\left.\frac{\dee}{\dee t}\right|_{t=0}\Psi(e^{tv}p).\]
+\end{dfn}
+
+\todo{maybe something on why these are the same?}
+
+\begin{lem}
+    Given $\in\mf t$ the vector field $v^\#$ is symplectically dual to $-\dee\mu(v)$.
+\end{lem}
+\begin{proof}
+    We work on  a basis and identify $T=\bR^k/\bZ^k$ with $\mu=(H_1,\ldots,H_k)$.
+    We want to show that
+    \[w(v^\#,-)=-\dee\mu(v).\]
+    It suffices to check this on the basis of $\partial_{x_i}$, and we get
+    \[w(\partial_{x_i}^\#,-)=-\dee H_i\]
+    which is how $\partial_{x_i}^\#$ is defined.
+\end{proof}
+\todo{something's not right here}
+
+\begin{lem}
+    Let $M=(M^{2n},\omega)$ by symplectic and equipped with a Hamiltonian torus action $T\acts M$, with moment map $\mu$.
+    Given a morphism of $\phi:T'\to T$ torii the moment map of the induced action $\mu':M\to(\mf t')^\vee$ satisfies
+    \[\phi\mu'=\phi^*\circ\mu.\]
+\end{lem}
+\begin{proof}
+    For $v\in\mf t'$ we take the pushforward $(\dee\phi(v))^\#$.
+    Now $(\dee\phi(v))^\#$ is dual to $-\dee\mu(\dee\phi(v))=-\dee(\phi^*\mu)(v)$.
+\end{proof}
+\todo{bit more detail}
+
+We now move on to symplectic reduction.
+
+\begin{lem}[Linear symplectic reduction]
+    Let $(V,\omega)$ be a symplectic vector space and $F\hookrightarrow V$ be a linear subspace.
+    We denote by $c:F\to F/(F\cap F^\omega)$ the projection map.
+    The formula $\pi^*\bar\omega=c^*\omega$ defines a linear symplectic form on the quotient $\bar F$.
+\end{lem}
