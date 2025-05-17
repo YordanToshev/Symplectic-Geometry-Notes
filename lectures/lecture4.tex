@@ -2,7 +2,42 @@ The references for this lecture are sections 1.2-1.6 of \cite{Evans_2023}.
 In this lecture we went over integrable systems and Hamiltonian torus actions.
 We will denote by $M=(M^{2n},\omega)$ a symplectic manifold.
 
+\subsubsection*{Review}
+
+Recall from the previous lecture the Poisson bracket
+\[\{-,-\}:C^\infty(M)\times C^\infty(M)\to ,\quad (F,G)\mapsto\{F,G\}:=\omega(X_F,X_G).\]
+In fact $(C^\infty(M),\{-,-\})$ forms a Lie algebra.
+
+\todo{write/order better, also only first part cartan's formula, maybe redo somehow?}
+
+\begin{thm}[Cartan's magic formula]
+    Let $N$ be any smooth manifold and $\eta\in\Omega^k(N)$ a $k$-form.
+    Then for vector fields $X$ and $Y$ on $N$ the following hold.
+    \begin{enumerate}
+        \item $\mc L_X\eta=\dee i_X\eta+i_X\dee\eta$
+        \item $i_{[X,Y]}\eta=\mc L_Xi_Y\eta-i_Y\mc L_X\eta$
+    \end{enumerate}
+\end{thm}
+
+\begin{cor}
+    The natural map $C^\infty(M)\to\mf X(M)$ given by $F\mapsto X_F$ is a morphism of Lie algebras.
+\end{cor}
+
+\begin{proof}
+    Let $F,G\in C^\infty(M)$, we check that $X_{\{F,G\}}=[X_F,X_G]$.
+    By Cartan
+    \begin{align*}
+        i_{[X_F,X_G]}\omega&=\mc L_{X_F}i_{X_G}\omega-i_{X_F}\mc L_{X_G}\omega\\
+        &=\mc L_{X_F}i_{X_G}\omega-i_{X_F}(i_{X_g}\dee\omega+\dee i_{X_G}\omega)\\
+        &=\mc L_{X_F}i_{X_G}\omega\\
+        &=\dee i_{X_F}i_{X_G}\omega+i_{X_F}\dee i_{X_G}\omega
+        &=-\dee\omega(X_F,X_G)
+    \end{align*}
+    Thus $[X_F,X_G]=X_{\{X_F,X_G\}}$.
+\end{proof}
+
 \subsubsection*{Integrable Hamiltonian system}
+\todo{Check Yordan's notes here}
 
 \begin{dfn}[Poisson commutativity]
     We say that smooth functions $F,G\in C^\infty(M)$ \emph{Poisson commute} if $\{F,G\}=0$, i.e. if $\omega(X_F,X_G)$ vanishes everywhere.
