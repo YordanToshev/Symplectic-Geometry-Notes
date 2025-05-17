@@ -1,1 +1,62 @@
-The references for this lecture are sections 1.3-1.6 of \cite{Evans_2023}.
+The references for this lecture are sections 1.2-1.6 of \cite{Evans_2023}.
+In this lecture we went over integrable systems and Hamiltonian torus actions.
+We will denote by $M=(M^{2n},\omega)$ a symplectic manifold.
+
+\subsubsection*{Integrable Hamiltonian system}
+
+\begin{dfn}[Poisson commutativity]
+    We say that smooth functions $F,G\in C^\infty(M)$ \emph{Poisson commute} if $\{F,G\}=0$, i.e. if $\omega(X_F,X_G)$ vanishes everywhere.
+    We will refer to this simply as commuting whenever the meaning is clear from the context.
+\end{dfn}
+
+\begin{lem}[Invariance of commuting functions]
+    If $F,G\in C^\infty(M)$ commute then $F$ is invariant under the flow of $X_G$.
+\end{lem}
+
+\begin{proof}
+    \todo{more detail}
+    We consider the behavior of $f$ on integral curves of $X_G$.
+    \[\frac{\dee}{\dee t}F(\phi_{X_G}^t(x))=\dee F(X_{G,\phi_G^t(x)})=-\omega(X_{F,x},X_{G,x})=-\{F,G\}(x)=0.\]
+\end{proof}
+
+\begin{lem}[Commutativity of flows of Hamiltonian vector fields]
+    The flows $\phi_F^t$ and $\phi_G^t$ commute if and only if $\{F,G\}$ is locally constant.
+\end{lem}
+
+\begin{proof}
+    Recall that the flows of two vector fields commute if and only if their Lie bracket vanishes identically.
+    We further recall that $[X_F,X_G]=X_{\{F,G\}}$, and by the non-degeneracy of $\omega$ the vector field $X_{\{F,G\}}$ vanishes if and only if $\omega(X_{\{F,G\}},-)=\dee\{F,G\}$ vanishes.
+    But $\dee\{F,G\}$ vanishes identically exactly when $\{F,G\}$ is locally constant.
+\end{proof}
+
+\begin{dfn}[Induced Hamiltonian group action]
+    Given a map 
+    \[\mbf H=(H_1,\ldots,H_k):M\to\bR^k\]
+    such that $\{H_i,H_j\}=0$ for all $1\le i,j\le k$ we can define an induced Hamiltonian group action $\Psi:\bR^k\acts M$ by:
+    \[\Psi:\bR^k\times M\to M,\quad \Psi^t(x)=\phi_{H_1}^{t_1}\circ\cdots\circ\phi_{H_k}^{t_k}(x).\]
+\end{dfn}
+
+\todo{give an example from the book and Lie group version}
+
+\begin{dfn}[Integrable system]
+    We say that $\mbf H=(H_1,\ldots,H_n)$ is a complete commuting Hamiltonian system if $\{H_i,H_j\}=0$.
+    If $\mf H$ is proper and has a dense set of regular values then we say that is an \emph{integrable system}.
+    (A map is proper if the preimages of compact sets are compact.)
+\end{dfn}
+
+\begin{lem}[Orbits of Hamiltonian actions]
+    If $\mbf H:M\to\bR^k$ generates a Hamiltonian $\bR^k$-action, then the orbits of this action are isotropic submanifolds.
+    Furthermore if $M$ contains a regular point of $\mbf H$ then $k\le n$.
+\end{lem}
+
+\begin{proof}
+    \todo{prove this}
+\end{proof}
+
+\begin{cor}
+    If $k=n$ then the orbits of regular points are Lagrangian.
+\end{cor}
+
+\begin{proof}
+    \todo{prove this}
+\end{proof}
