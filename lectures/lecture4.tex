@@ -64,14 +64,19 @@ In fact $(C^\infty(M),\{-,-\})$ forms a Lie algebra.
     But $\dee\{F,G\}$ vanishes identically exactly when $\{F,G\}$ is locally constant.
 \end{proof}
 
-\begin{dfn}[Induced Hamiltonian group action]
+\begin{dfn}[Hamiltonian $\bR^k$-action]
     Given a map 
     \[\mbf H=(H_1,\ldots,H_k):M\to\bR^k\]
     such that $\{H_i,H_j\}=0$ for all $1\le i,j\le k$ we can define an induced Hamiltonian group action $\Psi:\bR^k\acts M$ by:
     \[\Psi:\bR^k\times M\to M,\quad \Psi^t(x)=\phi_{H_1}^{t_1}\circ\cdots\circ\phi_{H_k}^{t_k}(x).\]
 \end{dfn}
 
-\todo{give an example from the book and Lie group version}
+This definition can be extended to Lie groups.
+
+\begin{dfn}[Hamiltonian $G$-action]
+    Let $G$ be a Lie group with Lie algebra $\mf g$.
+    Then a Hamiltonian $G$-action is a $G$-action such that each one-parameter subgroup $\exp(t\xi)$ acts as a Hamiltonian flow 
+\end{dfn}
 
 \begin{dfn}[Integrable system]
     We say that $\mbf H=(H_1,\ldots,H_n)$ is a complete commuting Hamiltonian system if $\{H_i,H_j\}=0$.
