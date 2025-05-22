@@ -1,0 +1,83 @@
+No references were given for this lecture.
+In this lecture we went over Delzant's theorem, displaceability, and motivation for Lagrangian submanifolds.
+
+\todo{recollections}
+
+\subsubsection*{Delzant's theorem}
+
+We begin by defining Delzant polytopes.
+
+\begin{dfn}[Rational convex polytope]
+	A rational convex polytope $\mc P\subset\bR^n$ is a subset of Euclidean space which can be defined as the intersection of finitely many half-spaces:
+	\[s_{\alpha,b}:=\{x\in\bR^n|\alpha\cdot x\le b\},\]
+	with $\alpha\in\bZ^n$ and $b\in\bR$.
+	So it is a convex polytope with rational slopes, but not necessarily rational vertices.
+\end{dfn}
+
+\begin{dfn}[Delzant polytope}
+	A rational convex polytope $\mc P\subset\bR^n$ is \emph{Delzant}, if:
+	\begin{enumerate}
+		\item each vertex meets exactly $n$ edges,
+		\item and at every vertex $v$ there exist $n$ integral vectors parallel to the edges meeting $v$ which together form an integral basis for $\bZ^n$.
+	\end{enumerate}
+\end{dfn}
+
+\begin{example}
+	\todo{Tikz and write out examples}
+\end{example}
+
+The following deep result gives a correspondence between symplectic toric manifolds and Delzant polytopes.
+\begin{thm}[Atiyah-Guillemin-Delzant]
+	\todo{there was a fourth person associated to this result, who? also what exactly is meant by same?}
+	\begin{enumerate}
+	\item The moment polytope of a symplectic toric manifold is Delzant.
+	\item Every Delzant polytope arises as the moment polytope of some symplectic toric manifold.
+	\item Any two symplectic toric manifolds with the same moment polytope are equivariantly symplectomorphic.
+	\end{enumerate}
+\end{thm}
+
+\begin{remark}
+	\todo{probably also translation invariance? give details on the construction}
+	We will not prove this result, nor provide a reference at this time as it the collection of multiple disparate results.
+	By sameness, we identify Delzant polytopes under the action of $GL_n(\bZ)$.
+	However the construction from the previous lecture proves the second point for Delzant polytopes with integral coefficients(vertices?).
+	The families of symplectic manifolds constructed in the previous lecture are in fact Kähler manifolds with integral symplectic forms, and thus embed as complex varieties.
+\end{remark}
+
+\subsubsection*{Interlude on Lagrangian submanifolds}
+Let $M=(M^{2n},\omega)$ be a symplectic manifold.
+Consider the groups
+\[\Ham(M)\subset\Symp_0(M)\subset\Symp(M)\subset\Diff(M),\]
+where $\Symp_0(M)$ denotes the connected component of $\Symp(M)$ containing the identity, and $\Ham(M)$ denotes the symplectomorphisms given by the time $1$ maps of Hamiltonians.
+So
+\[\Ham(M)=\{\phi_{\mc H}^1|\mc H\text{ Hamiltonian}\}.\]
+It is clear that this is a subset of $\Symp_0(M)$, as we get a path from the identity by varying the time from $0$ to $1$.
+Showing that this is a group is non-trivial, but it is a group though we will not prove this.
+
+\begin{remark}
+	If $H(M,\bR)=0$, then $\Ham(M)=\Symp_0(M)$.
+	This is proven in the homework.
+\end{remark}
+
+\todo{physical interpretation of Lagrangian submanifolds}
+
+\subsubsection*{Displaceability of Lagrangians}
+
+\begin{dfn}[Hamiltonian displaceability]
+	We say that a Lagrangian submanifold $L\subset(M^{2n},\omega)$ is (Hamiltonianly) displaceable if there exists $\phi\in\Ham(M)$ such that $\phi(L)\cap L=\varnothing$.
+\end{dfn}
+
+\begin{example}
+	\todo{write and draw this.}
+\end{example}
+
+\begin{thm}[Big fiber theorem]
+	Given $M^{2n}\xrightarrow\mu\mc P\subset\bR^n$ symplectic toric, there exists a point $p\in\mc P$ such that $\mu^{-1}\mc P$ is non-displaceable.
+	This is sometimes referred to as symplectic rigidity.
+\end{thm}
+
+\begin{remark}
+	\todo{write a bit about Floer theory}
+\end{remark}
+
+\subsubsection*{Arnold's conjecture}
