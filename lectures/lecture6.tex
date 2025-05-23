@@ -84,4 +84,40 @@ Showing that this is a group is non-trivial, but it is a group though we will no
 
 \subsubsection*{Arnold's conjecture}
 
-We now cover Arnold's conjecture.
+We now cover Arnold's conjecture for a symplectic manifold $M=(M^{2n},\omega)$.
+
+\begin{con}[Arnold]
+	Given $\phi\in\Ham(M)$,
+	\[\#\{p\in M|\phi(p)=p\}\ge\text{minimal number of critical points of a smooth function on } M.\]
+\end{con}
+
+So it is conjectured that the number of fixed points of a Hamiltonian symplectomorphism is bounded from below by the number of critical points that a smooth function must have.
+However we have the following lemma.
+
+\begin{lem}
+	\todo{rewrite lemma}
+	Let $\Delta:M\hookrightarrow M\times M^-$, where $M^-=(M,-\omega)$.
+	Then $\Delta$ is Lagrangian and given a Hamiltonian $\phi$ on $M$,
+	\[\{p\in M|\phi(p)=p\}=\Delta\cap\{(p,\phi(p))|p\in M\}.\]
+	Importantly, the graph of $\phi$ is a Lagrangian submanifold of $M\times M^{-1}$.
+\end{lem}
+
+\begin{proof}
+	This is proven in the homework.
+\end{proof}
+
+\todo{tikz a picture}
+
+Though we are far from proving Arnold's conjecture, we have some results in that direction.
+For example if we assume a somewhat technical conjecture of non-degeneracy for $\phi$, then
+\[\#\{p\in M||\phi(p)=p\}\ge\operatorname{rank}H^\bullet(M,\mbb K),\]
+where $\mbb K=\bQ,\bZ,\mbb F_p$.
+\todo{line on morse theory}
+
+\subsubsection*{Classification of Lagrangians}
+\begin{dfn}[Exactness]
+	We say that $M$ is \emph{exact} if $\omega$ is exact, i.e. if there exists a $\lambda$ such that $\omega=\dee\lambda$.
+	Given a Lagrangian submanifold $L$, we say that it is exact if 
+\end{dfn}
+
+\todo{finish lecture}
